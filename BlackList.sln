@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackList", "BlackList\BlackList.csproj", "{C78C9E01-8674-4CFA-89DD-45AD0DC0B9A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{810F4439-5C1E-4D20-93C4-189894480148}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C78C9E01-8674-4CFA-89DD-45AD0DC0B9A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C78C9E01-8674-4CFA-89DD-45AD0DC0B9A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C78C9E01-8674-4CFA-89DD-45AD0DC0B9A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C78C9E01-8674-4CFA-89DD-45AD0DC0B9A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{810F4439-5C1E-4D20-93C4-189894480148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{810F4439-5C1E-4D20-93C4-189894480148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{810F4439-5C1E-4D20-93C4-189894480148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{810F4439-5C1E-4D20-93C4-189894480148}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
