@@ -42,7 +42,11 @@ namespace BlackList
                 cmdProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 cmdProcess.Start();
 
-                Thread.Sleep(5000);                
+                if (!cmdProcess.WaitForExit(5000))
+                {
+                    cmdProcess.Kill();
+                    ret = false;
+                }               
                 
                 File.Delete(KeyPEMPath);        
             }
