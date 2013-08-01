@@ -14,7 +14,7 @@ namespace BlackList
             Int64 lastDumpDate = 0;
 
             using (ChannelFactory<ServiceReference.OperatorRequestPortType> scf = new ChannelFactory<ServiceReference.OperatorRequestPortType>(
-                new BasicHttpBinding(), new EndpointAddress("http://zapret-info.gov.ru/services/OperatorRequest/")))
+                new BasicHttpBinding(), new EndpointAddress("http://vigruzki.rkn.gov.ru/services/OperatorRequest/")))
             {
                 ServiceReference.OperatorRequestPortType channel = scf.CreateChannel();
                 ServiceReference.getLastDumpDateResponse glddr = channel.getLastDumpDate(new ServiceReference.getLastDumpDateRequest());
@@ -30,7 +30,7 @@ namespace BlackList
             code = null;
 
             using (ChannelFactory<ServiceReference.OperatorRequestPortType> scf = new ChannelFactory<ServiceReference.OperatorRequestPortType>(
-                new BasicHttpBinding(), new EndpointAddress("http://zapret-info.gov.ru/services/OperatorRequest/")))
+                new BasicHttpBinding(), new EndpointAddress("http://vigruzki.rkn.gov.ru/services/OperatorRequest/")))
             {
                 ServiceReference.OperatorRequestPortType channel = scf.CreateChannel();
                 ServiceReference.sendRequestRequestBody srrb = new ServiceReference.sendRequestRequestBody();
@@ -57,7 +57,7 @@ namespace BlackList
             registerZipArchive = null;
 
             using (ChannelFactory<ServiceReference.OperatorRequestPortType> scf = new ChannelFactory<ServiceReference.OperatorRequestPortType>(
-                new BasicHttpBinding(), new EndpointAddress("http://zapret-info.gov.ru/services/OperatorRequest/")))
+                new BasicHttpBinding(), new EndpointAddress("http://vigruzki.rkn.gov.ru/services/OperatorRequest/")))
             {
                 ServiceReference.OperatorRequestPortType channel = scf.CreateChannel();
                 ServiceReference.getResultRequestBody grrb = new ServiceReference.getResultRequestBody();

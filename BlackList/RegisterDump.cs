@@ -37,10 +37,15 @@ namespace BlackList
     {
         /*
          * <content id="60" includeTime="2013-01-12T16:33:38">
-         *    <decision date="2012-11-03" number="14-РИ" org="Роскомнадзор"/>
-         *    <url><![CDATA[http://s4.artemisweb.jp/settoto/]]></url>
-         *    <domain><![CDATA[s4.artemisweb.jp]]></domain>
-         *    <ip>124.35.0.146</ip>
+         *    <decision date="2013-11-03" number="МИ-6" org="РосКосМопсПопс"/>
+         *    <url><![CDATA[http://habrahabr.ru/post/187574/]]></url>
+         *    <ip>123.45.67.89</ip>
+         * </content>
+         * <content id="69" includeTime="2013-05-12T12:43:34">
+         *    <decision date="2013-10-02" number="ФБИ" org="СФНК"/>
+         *    <domain><![CDATA[chelaxe.ru]]></domain>
+         *    <ip>123.45.67.89</ip>
+         *    <ip>87.65.43.210</ip>
          * </content>
          */
 
@@ -51,9 +56,9 @@ namespace BlackList
         public String number { get; set; }
         public String org { get; set; }
 
-        public String url { get; set; }
-        public String domain { get; set; }
-        public String ip { get; set; }
+        public List<String> url { get; set; }
+        public List<String> domain { get; set; }
+        public List<String> ip { get; set; }
 
         public ItemRegisterDump()
         {
@@ -64,9 +69,9 @@ namespace BlackList
             number = String.Empty;
             org = String.Empty;
 
-            url = String.Empty;
-            domain = String.Empty;
-            ip = String.Empty;
+            url = new List<string>();
+            domain = new List<string>();
+            ip = new List<string>();
         }
     }
 }

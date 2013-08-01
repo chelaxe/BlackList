@@ -35,20 +35,31 @@ namespace BlackList
 
                 for (int i = 0; i < content.Count; i++)
                 {
-                    XmlNodeList nodechild = content[i].ChildNodes;
-
                     ItemRegisterDump item = new ItemRegisterDump();
 
                     item.id = content[i].Attributes.GetNamedItem("id").InnerText;
                     item.includeTime = content[i].Attributes.GetNamedItem("includeTime").InnerText;
 
-                    item.date = nodechild[0].Attributes.GetNamedItem("date").InnerText;
-                    item.number = nodechild[0].Attributes.GetNamedItem("number").InnerText;
-                    item.org = nodechild[0].Attributes.GetNamedItem("org").InnerText;
-
-                    item.url = nodechild[1].InnerText;
-                    item.domain = nodechild[2].InnerText;
-                    item.ip = nodechild[3].InnerText;
+                    foreach (XmlNode node in content[i].ChildNodes)
+                    { 
+                        switch(node.Name)
+                        {
+                            case "decision":
+                                item.date = node.Attributes.GetNamedItem("date").InnerText;
+                                item.number = node.Attributes.GetNamedItem("number").InnerText;
+                                item.org = node.Attributes.GetNamedItem("org").InnerText;
+                                break;
+                            case "url":
+                                item.url.Add(node.InnerText);
+                                break;
+                            case "domain":
+                                item.domain.Add(node.InnerText);
+                                break;
+                            case "ip":
+                                item.ip.Add(node.InnerText);
+                                break;
+                        }
+                    }
 
                     Register.Items.Add(item);
                 }

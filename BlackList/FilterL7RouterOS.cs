@@ -27,41 +27,44 @@ namespace BlackList
                     mikrotik.Send("=name=cleaner");
                     mikrotik.Send("=source=/ip firewall layer7-protocol remove [find comment=register]\n/ip firewall filter remove [find comment=register]", true);
 
+                    mikrotik.Read();
+
                     mikrotik.Send("/system/script/run");
                     mikrotik.Send("=number=cleaner", true);
+
+                    mikrotik.Read();
 
                     /* Cleaner
                      * /ip firewall layer7-protocol remove [find comment=register]
                      * /ip firewall filter remove [find comment=register]
                      */
 
-
-                    Thread.Sleep(1000);
-
                     foreach (ItemRegisterDump item in dump.Items)
                     {
-                        Thread.Sleep(100);
+                        for (Int32 i = 0; i < item.domain.Count; i++ )
+                        {
+                            mikrotik.Send("/ip/firewall/layer7-protocol/add");
+                            mikrotik.Send("=name=" + item.id + "_" + i);
+                            mikrotik.Send("=comment=register");
+                            mikrotik.Send("=regexp=^.+(" + item.domain[i] + ").*$", true);
 
-                        mikrotik.Send("/ip/firewall/layer7-protocol/add");
-                        mikrotik.Send("=name=" + item.id);
-                        mikrotik.Send("=comment=register");
-                        mikrotik.Send("=regexp=^.+(" + item.domain + ").*$", true);
+                            mikrotik.Read();
 
-                        Thread.Sleep(100);
+                            mikrotik.Send("/ip/firewall/filter/add");
+                            mikrotik.Send("=action=drop");
+                            mikrotik.Send("=chain=forward");
+                            mikrotik.Send("=disabled=no");
+                            mikrotik.Send("=dst-port=80");
+                            mikrotik.Send("=layer7-protocol=" + item.id + "_" + i);
+                            mikrotik.Send("=protocol=tcp");
+                            mikrotik.Send("=src-address=" + SRCAddress);
+                            mikrotik.Send("=comment=register", true);
 
-                        mikrotik.Send("/ip/firewall/filter/add");
-                        mikrotik.Send("=action=drop");
-                        mikrotik.Send("=chain=forward");
-                        mikrotik.Send("=disabled=no");
-                        mikrotik.Send("=dst-port=80");
-                        mikrotik.Send("=layer7-protocol=" + item.id);
-                        mikrotik.Send("=protocol=tcp");
-                        mikrotik.Send("=src-address=" + SRCAddress);
-                        mikrotik.Send("=comment=register", true);                        
+                            mikrotik.Read();
+                        }
                     }
                 }
 
-                Thread.Sleep(200);
                 mikrotik.Close();
             }
             catch (Exception error)

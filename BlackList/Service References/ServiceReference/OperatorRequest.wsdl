@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://zapret-info.gov.ru/OperatorRequest/" name="OperatorRequest" targetNamespace="http://zapret-info.gov.ru/OperatorRequest/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://vigruzki.rkn.gov.ru/OperatorRequest/" name="OperatorRequest" targetNamespace="http://vigruzki.rkn.gov.ru/OperatorRequest/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://zapret-info.gov.ru/OperatorRequest/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema targetNamespace="http://vigruzki.rkn.gov.ru/OperatorRequest/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <xsd:element name="getLastDumpDate">
         <xsd:complexType>
           <xsd:sequence />
@@ -84,7 +84,7 @@
   <wsdl:binding name="OperatorRequestPortBinding" type="tns:OperatorRequestPortType">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="getLastDumpDate">
-      <soap:operation soapAction="http://zapret-info.gov.ru/services/OperatorRequest/getLastDumpDate" style="document" />
+      <soap:operation soapAction="http://vigruzki.rkn.gov.ru/services/OperatorRequest/getLastDumpDate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -93,7 +93,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="sendRequest">
-      <soap:operation soapAction="http://zapret-info.gov.ru/services/OperatorRequest/sendRequest" style="document" />
+      <soap:operation soapAction="http://vigruzki.rkn.gov.ru/services/OperatorRequest/sendRequest" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -102,7 +102,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getResult">
-      <soap:operation soapAction="http://zapret-info.gov.ru/services/OperatorRequest/getResult" style="document" />
+      <soap:operation soapAction="http://vigruzki.rkn.gov.ru/services/OperatorRequest/getResult" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -113,7 +113,7 @@
   </wsdl:binding>
   <wsdl:service name="OperatorRequestService">
     <wsdl:port name="OperatorRequestPort" binding="tns:OperatorRequestPortBinding">
-      <soap:address location="http://zapret-info.gov.ru/services/OperatorRequest/" />
+      <soap:address location="http://vigruzki.rkn.gov.ru/services/OperatorRequest/" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
