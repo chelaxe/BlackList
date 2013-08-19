@@ -13,8 +13,11 @@ namespace BlackList
         {
             Int64 lastDumpDate = 0;
 
+            BasicHttpBinding HttpBinding = new BasicHttpBinding();
+            HttpBinding.MaxReceivedMessageSize = 65536 * 2;
+
             using (ChannelFactory<ServiceReference.OperatorRequestPortType> scf = new ChannelFactory<ServiceReference.OperatorRequestPortType>(
-                new BasicHttpBinding(), new EndpointAddress("http://vigruzki.rkn.gov.ru/services/OperatorRequest/")))
+                HttpBinding, new EndpointAddress("http://vigruzki.rkn.gov.ru/services/OperatorRequest/")))
             {
                 ServiceReference.OperatorRequestPortType channel = scf.CreateChannel();
                 ServiceReference.getLastDumpDateResponse glddr = channel.getLastDumpDate(new ServiceReference.getLastDumpDateRequest());
@@ -29,8 +32,11 @@ namespace BlackList
             Boolean result = false;
             code = null;
 
+            BasicHttpBinding HttpBinding = new BasicHttpBinding();
+            HttpBinding.MaxReceivedMessageSize = 65536 * 2;
+
             using (ChannelFactory<ServiceReference.OperatorRequestPortType> scf = new ChannelFactory<ServiceReference.OperatorRequestPortType>(
-                new BasicHttpBinding(), new EndpointAddress("http://vigruzki.rkn.gov.ru/services/OperatorRequest/")))
+                HttpBinding, new EndpointAddress("http://vigruzki.rkn.gov.ru/services/OperatorRequest/")))
             {
                 ServiceReference.OperatorRequestPortType channel = scf.CreateChannel();
                 ServiceReference.sendRequestRequestBody srrb = new ServiceReference.sendRequestRequestBody();
@@ -56,8 +62,11 @@ namespace BlackList
             Boolean result = false;
             registerZipArchive = null;
 
+            BasicHttpBinding HttpBinding = new BasicHttpBinding();
+            HttpBinding.MaxReceivedMessageSize = 65536 * 2;
+
             using (ChannelFactory<ServiceReference.OperatorRequestPortType> scf = new ChannelFactory<ServiceReference.OperatorRequestPortType>(
-                new BasicHttpBinding(), new EndpointAddress("http://vigruzki.rkn.gov.ru/services/OperatorRequest/")))
+                HttpBinding, new EndpointAddress("http://vigruzki.rkn.gov.ru/services/OperatorRequest/")))
             {
                 ServiceReference.OperatorRequestPortType channel = scf.CreateChannel();
                 ServiceReference.getResultRequestBody grrb = new ServiceReference.getResultRequestBody();
