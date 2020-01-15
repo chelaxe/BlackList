@@ -9,6 +9,6 @@ BlackList
 
 Актуально согласно правилам версии 2.0 от 16.07.2013
 
-Подробное описание доступно в статье на HabraHabr http://habrahabr.ru/post/187574/ а так же в моем блоге http://chelaxe.ru/blacklist/
+Подробное описание доступно в статье на HabraHabr http://habrahabr.ru/post/187574/
 
 По всем вопросам обращайтесь в Skype ChelAxe
